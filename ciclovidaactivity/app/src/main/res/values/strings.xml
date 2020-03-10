@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Ciclo Vida Activity</string>
+
+    <string name="bienvenido">Bienvenidos! Ciclo de vida de un activity!!!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="primer_activity">Primer Activity</string>
+    <string name="segundo_activity">Segundo Activity</string>
+
+    <string name="estado">Estado</string>
+    <string name="iniciar_activity">Iniciar Segundo Activity</string>
+    <string name="finalizar_activity">Finalizar Activity</string>
+
+</resources>
