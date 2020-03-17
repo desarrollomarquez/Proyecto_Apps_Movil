@@ -1,4 +1,5 @@
 package com.dataentropia.androidmvvm.model_db;
+
 import com.dataentropia.androidmvvm.model.Movie;
 
 import androidx.room.ColumnInfo;
