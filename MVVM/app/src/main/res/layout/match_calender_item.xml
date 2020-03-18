@@ -6,11 +6,11 @@
 <data>
     <variable
         name="movie"
-        type="com.dataentropia.androidmvvm.model.Movie" />
+        type="com.dataentropia.androidmvvm.servicios.entity.Movie" />
 
     <variable
         name="itemClick"
-        type="com.dataentropia.androidmvvm.util.CustomClickListener" />
+        type="com.dataentropia.androidmvvm.helpers.CustomClickListener" />
 </data>
 
 <LinearLayout

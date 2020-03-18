@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import com.dataentropia.androidmvvm.databinding.MatchCalenderItemBinding;
 import com.dataentropia.androidmvvm.R;
 
-import com.dataentropia.androidmvvm.model.Movie;
+import com.dataentropia.androidmvvm.servicios.entity.Movie;
 import com.dataentropia.androidmvvm.view.DetailseActivity;
 
 

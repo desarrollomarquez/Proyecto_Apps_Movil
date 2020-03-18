@@ -4,7 +4,7 @@
     <data>
         <variable
             name="movie"
-            type="com.dataentropia.androidmvvm.model.Movie" />
+            type="com.dataentropia.androidmvvm.servicios.entity.Movie" />
     </data>
 
     <ScrollView
