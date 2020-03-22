@@ -18,6 +18,9 @@ import java.util.concurrent.Executors;
 public class PersonViewModel extends AndroidViewModel {
 
     private PersonRepository personRepository = new PersonRepository(this.getApplication());
+
+    private AddressRepository addressRepository = new AddressRepository(this.getApplication());
+
     private final Executor executor = Executors.newFixedThreadPool(2);
 
     private final MutableLiveData<List<Person>> personsByCity = new MutableLiveData<>();
@@ -29,12 +32,9 @@ public class PersonViewModel extends AndroidViewModel {
         return personRepository.getPersonByMobile(mobile);
     });
 
-
     public LiveData<List<Person>> getPersonsByCityLive(){
         return personsByCity;
     }
-
-
 
     public PersonViewModel(@NonNull Application application){
         super(application);
@@ -48,9 +48,21 @@ public class PersonViewModel extends AndroidViewModel {
         });
     }
 
+    public void addAddress(Address a){
+        executor.execute(() -> {
+            addressRepository.addAddress(a);
+        });
+    }
+
     public void updatePerson(Person p){
         executor.execute(() -> {
         personRepository.updatePerson(p);
+        });
+    }
+
+    public void updateAddress(Address a){
+        executor.execute(() -> {
+            addressRepository.updateAddress(a);
         });
     }
 
@@ -63,13 +75,18 @@ public class PersonViewModel extends AndroidViewModel {
     public LiveData<List<Person>> getAllPersons(){
         return personRepository.getAllPersons();
     }
+
+    public LiveData<List<Address>> getAllAddress(){
+        return addressRepository.getAllAddress();
+    }
     //Room DAO call needs to be run on background thread
     //This example uses AsyncTask
     public void getPersonsByCity(List<String> cities){
         new AsyncTask<Void, Void, List<Person>>() {
             @Override
             protected List<Person> doInBackground(Void... params) {
-                return personRepository.getPersonsByCity(cities);
+                //return personRepository.getPersonsByCity(cities);
+                return (List<Person>) personRepository.getAllPersons();
             }
             @Override
             protected void onPostExecute(List<Person> personLst) {

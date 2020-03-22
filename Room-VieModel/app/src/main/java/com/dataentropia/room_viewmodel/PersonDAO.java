@@ -30,6 +30,6 @@ public interface PersonDAO {
     @Query("SELECT * FROM person where mobile = :mobileIn")
     public LiveData<Person> getPersonByMobile(String mobileIn);
 
-    @Query("SELECT * FROM person where city In (:cityIn)")
-    public List<Person> getPersonByCities(List<String> cityIn);
+   /* @Query("SELECT * FROM person where city In (:cityIn)")
+    public List<Person> getPersonByCities(List<String> cityIn);*/
 }

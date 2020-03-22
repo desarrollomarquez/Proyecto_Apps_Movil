@@ -13,7 +13,7 @@ public class PersonRepository {
 
 
     public PersonRepository(Context context) {
-        personDAO = DatabaseCreator.getPersonDatabase(context).PersonDatabase();
+        personDAO = DatabaseCreator.getAppDatabase(context).PersonDatabase();
     }
 
 
@@ -34,10 +34,10 @@ public class PersonRepository {
         return personDAO.getAllPersons();
     }
 
-    public List<Person> getPersonsByCity(List<String> cities) {
+    /*public List<Person> getPersonsByCity(List<String> cities) {
 
         return personDAO.getPersonByCities(cities);
-    }
+    }*/
 
     public LiveData<Person> getPersonByMobile(String mobile) {
         return personDAO.getPersonByMobile(mobile);

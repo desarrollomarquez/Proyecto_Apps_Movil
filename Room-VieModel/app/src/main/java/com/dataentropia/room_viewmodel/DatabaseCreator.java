@@ -6,21 +6,22 @@ import androidx.room.Room;
 
 public class DatabaseCreator {
 
-    private static PersonDatabase personDatabase;
-    private static AddressDatabase addressDatabase;
+    private static AppDatabase appDatabase;
     private static final Object LOCK = new Object();
 
-    public synchronized static PersonDatabase getPersonDatabase(Context context){
-        if(personDatabase == null) {
+    public synchronized static AppDatabase getAppDatabase(Context context){
+        if(appDatabase == null) {
             synchronized (LOCK) {
-                if (personDatabase == null) {
-                    personDatabase = Room.databaseBuilder(context,
-                            PersonDatabase.class, "person db").build();
+                if (appDatabase == null) {
+                    appDatabase = Room.databaseBuilder(context,
+                            AppDatabase.class, "room_viewmodel db").build();
                 }
             }
         }
-        return personDatabase;
+        return appDatabase;
     }
+
+
 
 
 

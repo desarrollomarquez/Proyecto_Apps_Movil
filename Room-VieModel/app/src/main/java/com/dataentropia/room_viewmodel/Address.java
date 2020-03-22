@@ -1,37 +1,40 @@
 package com.dataentropia.room_viewmodel;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "address")
 public class Address {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
-    private String id;
-    @NonNull
-    private String id_mobile;
+    @ColumnInfo(name = "id")
+    private int id;
+    @ColumnInfo(name = "addressone")
+    private String addressone;
+    @ColumnInfo(name = "city")
     private String city;
+    @ColumnInfo(name = "country")
     private String country;
+    @ColumnInfo(name = "zip")
     private String zip;
 
-    @NonNull
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(@NonNull String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    @NonNull
-    public String getId_mobile() {
-        return id_mobile;
+    public String getAddressone() {
+        return addressone;
     }
 
-    public void setId_mobile(@NonNull String id_mobile) {
-        this.id_mobile = id_mobile;
+    public void setAddressone(String addressone) {
+        this.addressone = addressone;
     }
 
     public String getCity() {

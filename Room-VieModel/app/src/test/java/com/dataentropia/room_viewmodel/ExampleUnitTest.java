@@ -1,4 +1,4 @@
-package com.zoftino.room;
+package com.dataentropia.room_viewmodel;
 
 import org.junit.Test;
 

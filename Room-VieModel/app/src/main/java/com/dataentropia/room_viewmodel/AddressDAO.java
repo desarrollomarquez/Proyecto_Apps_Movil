@@ -26,7 +26,7 @@ public interface AddressDAO {
     @Query("SELECT * FROM address")
     public LiveData<List<Address>> getAllAddress();
 
-    @Query("SELECT * FROM address where id_mobile = :mobileIn")
+    @Query("SELECT * FROM address where id = :mobileIn")
     public LiveData<Address> getAddressByMobile(String mobileIn);
 
     @Query("SELECT * FROM address where city In (:cityIn)")

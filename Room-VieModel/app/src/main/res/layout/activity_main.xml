@@ -89,7 +89,7 @@
         app:layout_constraintLeft_toLeftOf="parent" ></TextView>
 
     <EditText
-        android:id="@+id/lineOne"
+        android:id="@+id/addressOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
@@ -219,6 +219,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:onClick="getAllPerson"></Button>
 
+
     <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"
@@ -231,4 +232,16 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="getPersonByCities"></Button>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get All Address"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="getAllAddress"></Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

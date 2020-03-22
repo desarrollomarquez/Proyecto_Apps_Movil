@@ -1,4 +1,4 @@
-package com.zoftino.room;
+package com.dataentropia.room_viewmodel;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
