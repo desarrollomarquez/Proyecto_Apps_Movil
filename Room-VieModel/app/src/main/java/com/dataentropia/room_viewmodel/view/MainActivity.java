@@ -1,4 +1,4 @@
-package com.dataentropia.room_viewmodel;
+package com.dataentropia.room_viewmodel.view;
 
 
 import android.os.Bundle;
@@ -13,9 +13,15 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dataentropia.room_viewmodel.data.local.entity.Address;
+import com.dataentropia.room_viewmodel.data.local.entity.Person;
+import com.dataentropia.room_viewmodel.R;
+import com.dataentropia.room_viewmodel.viewmodel.PersonViewModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unchecked")
 public class MainActivity extends AppCompatActivity {
 
     private PersonViewModel personViewModel;

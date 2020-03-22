@@ -1,4 +1,4 @@
-package com.dataentropia.room_viewmodel;
+package com.dataentropia.room_viewmodel.data.local.entity;
 
 
 import androidx.annotation.NonNull;

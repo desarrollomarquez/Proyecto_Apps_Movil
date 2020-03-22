@@ -1,4 +1,4 @@
-package com.dataentropia.room_viewmodel;
+package com.dataentropia.room_viewmodel.data.local.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -8,6 +8,8 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+
+import com.dataentropia.room_viewmodel.data.local.entity.Address;
 
 import java.util.List;
 

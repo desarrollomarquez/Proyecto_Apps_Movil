@@ -1,4 +1,4 @@
-package com.dataentropia.room_viewmodel;
+package com.dataentropia.room_viewmodel.viewmodel;
 
 
 import android.app.Application;
@@ -11,10 +11,15 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 
+import com.dataentropia.room_viewmodel.data.local.entity.Address;
+import com.dataentropia.room_viewmodel.data.remote.repository.AddressRepository;
+import com.dataentropia.room_viewmodel.data.local.entity.Person;
+import com.dataentropia.room_viewmodel.data.remote.repository.PersonRepository;
+
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-
+@SuppressWarnings("unchecked")
 public class PersonViewModel extends AndroidViewModel {
 
     private PersonRepository personRepository = new PersonRepository(this.getApplication());

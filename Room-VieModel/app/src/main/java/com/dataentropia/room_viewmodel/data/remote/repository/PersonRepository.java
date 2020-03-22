@@ -1,15 +1,19 @@
-package com.dataentropia.room_viewmodel;
+package com.dataentropia.room_viewmodel.data.remote.repository;
 
 import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
+import com.dataentropia.room_viewmodel.helpers.DatabaseCreator;
+import com.dataentropia.room_viewmodel.data.local.dao.PersonDAO;
+import com.dataentropia.room_viewmodel.data.local.entity.Person;
+
 import java.util.List;
 
 public class PersonRepository {
 
-    private  PersonDAO personDAO;
+    private PersonDAO personDAO;
 
 
     public PersonRepository(Context context) {

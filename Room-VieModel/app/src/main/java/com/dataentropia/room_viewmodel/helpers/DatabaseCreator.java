@@ -1,8 +1,10 @@
-package com.dataentropia.room_viewmodel;
+package com.dataentropia.room_viewmodel.helpers;
 
 
 import android.content.Context;
 import androidx.room.Room;
+
+import com.dataentropia.room_viewmodel.data.local.AppDatabase;
 
 public class DatabaseCreator {
 
