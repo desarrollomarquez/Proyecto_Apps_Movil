@@ -15,13 +15,13 @@ public class Parametro {
     @ColumnInfo(name = "id")
     private int id;
     @ColumnInfo(name = "codigo")
-    private Text codigo;
+    private String codigo;
     @ColumnInfo(name = "descripcion")
-    private Text descripcion;
+    private String descripcion;
     @ColumnInfo(name = "valor")
-    private Text valor;
+    private String valor;
     @ColumnInfo(name = "estado")
-    private Text estado;
+    private String estado;
 
 
     public int getId() {
@@ -32,35 +32,35 @@ public class Parametro {
         this.id = id;
     }
 
-    public Text getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Text codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
-    public Text getDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(Text descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public Text getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(Text valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 
-    public Text getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(Text estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 }

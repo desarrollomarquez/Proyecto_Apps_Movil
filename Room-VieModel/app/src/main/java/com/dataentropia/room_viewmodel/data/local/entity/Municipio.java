@@ -15,9 +15,9 @@ public class Municipio {
     @ColumnInfo(name = "id")
     private int id;
     @ColumnInfo(name = "mun_codigo")
-    private Text mun_codigo;
+    private String mun_codigo;
     @ColumnInfo(name = "mun_nome")
-    private Text mun_nome;
+    private String mun_nome;
 
 
     public int getId() {
@@ -28,19 +28,19 @@ public class Municipio {
         this.id = id;
     }
 
-    public Text getMun_codigo() {
+    public String getMun_codigo() {
         return mun_codigo;
     }
 
-    public void setMun_codigo(Text mun_codigo) {
+    public void setMun_codigo(String mun_codigo) {
         this.mun_codigo = mun_codigo;
     }
 
-    public Text getMun_nome() {
+    public String getMun_nome() {
         return mun_nome;
     }
 
-    public void setMun_nome(Text mun_nome) {
+    public void setMun_nome(String mun_nome) {
         this.mun_nome = mun_nome;
     }
 }

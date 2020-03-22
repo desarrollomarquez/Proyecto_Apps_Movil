@@ -10,29 +10,23 @@ import org.w3c.dom.Text;
 @Entity(tableName = "termino_condicion")
 public class TerminoCondicion {
 
-    @PrimaryKey(autoGenerate = true)
+    /*@PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    private int id;
+    private int id;*/
+    @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "tc_id")
     private int tc_id;
     @ColumnInfo(name = "titulo")
-    private Text titulo;
+    private String titulo;
     @ColumnInfo(name = "contenido")
-    private Text contenido;
+    private String contenido;
     @ColumnInfo(name = "requerido")
-    private Text requerido;
+    private String requerido;
     @ColumnInfo(name = "orden")
-    private Text orden;
+    private String orden;
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getTc_id() {
         return tc_id;
@@ -42,35 +36,35 @@ public class TerminoCondicion {
         this.tc_id = tc_id;
     }
 
-    public Text getTitulo() {
+    public String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(Text titulo) {
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
-    public Text getContenido() {
+    public String getContenido() {
         return contenido;
     }
 
-    public void setContenido(Text contenido) {
+    public void setContenido(String contenido) {
         this.contenido = contenido;
     }
 
-    public Text getRequerido() {
+    public String getRequerido() {
         return requerido;
     }
 
-    public void setRequerido(Text requerido) {
+    public void setRequerido(String requerido) {
         this.requerido = requerido;
     }
 
-    public Text getOrden() {
+    public String getOrden() {
         return orden;
     }
 
-    public void setOrden(Text orden) {
+    public void setOrden(String orden) {
         this.orden = orden;
     }
 }

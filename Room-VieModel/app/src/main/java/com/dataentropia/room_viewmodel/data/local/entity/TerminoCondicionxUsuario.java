@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
+import androidx.room.RoomWarnings;
+
 import org.w3c.dom.Text;
 
 
@@ -16,12 +19,13 @@ import org.w3c.dom.Text;
                 @ForeignKey(entity = Usuario.class,
                         parentColumns = "username",
                         childColumns = "tcu_pes_doc")
-        })
+        },
+        indices = {@Index("tcu_pes_doc"),@Index("tcu_tc_id")})
 public class TerminoCondicionxUsuario {
 
     @NonNull
     @ColumnInfo(name = "tcu_pes_doc")
-    private Text tcu_pes_doc;
+    private int tcu_pes_doc;
     @NonNull
     @ColumnInfo(name = "tcu_tc_id")
     private int tcu_tc_id;
@@ -29,6 +33,13 @@ public class TerminoCondicionxUsuario {
     @ColumnInfo(name = "tcu_acepto")
     private int tcu_acepto;
 
+    public int getTcu_pes_doc() {
+        return tcu_pes_doc;
+    }
+
+    public void setTcu_pes_doc(int tcu_pes_doc) {
+        this.tcu_pes_doc = tcu_pes_doc;
+    }
 
     public int getTcu_tc_id() {
         return tcu_tc_id;
@@ -46,12 +57,4 @@ public class TerminoCondicionxUsuario {
         this.tcu_acepto = tcu_acepto;
     }
 
-    @NonNull
-    public Text getTcu_pes_doc() {
-        return tcu_pes_doc;
-    }
-
-    public void setTcu_pes_doc(@NonNull Text tcu_pes_doc) {
-        this.tcu_pes_doc = tcu_pes_doc;
-    }
 }

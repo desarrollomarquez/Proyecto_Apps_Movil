@@ -15,11 +15,11 @@ public class Dispositivo {
     @ColumnInfo(name = "id")
     private int id;
     @ColumnInfo(name = "imei")
-    private Text imei;
+    private String imei;
     @ColumnInfo(name = "version")
-    private Text version;
+    private String version;
     @ColumnInfo(name = "numcelular")
-    private Text numcelular;
+    private String numcelular;
 
 
     public int getId() {
@@ -30,27 +30,27 @@ public class Dispositivo {
         this.id = id;
     }
 
-    public Text getImei() {
+    public String getImei() {
         return imei;
     }
 
-    public void setImei(Text imei) {
+    public void setImei(String imei) {
         this.imei = imei;
     }
 
-    public Text getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public void setVersion(Text version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 
-    public Text getNumcelular() {
+    public String getNumcelular() {
         return numcelular;
     }
 
-    public void setNumcelular(Text numcelular) {
+    public void setNumcelular(String numcelular) {
         this.numcelular = numcelular;
     }
 }

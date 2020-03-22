@@ -15,9 +15,9 @@ public class TipoDocumento {
     @ColumnInfo(name = "id")
     private int id;
     @ColumnInfo(name = "nombre")
-    private Text nombre;
+    private String nombre;
     @ColumnInfo(name = "abrev")
-    private Text abrev;
+    private String abrev;
 
 
     public int getId() {
@@ -28,19 +28,20 @@ public class TipoDocumento {
         this.id = id;
     }
 
-    public Text getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(Text nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public Text getAbrev() {
+    public String getAbrev() {
         return abrev;
     }
 
-    public void setAbrev(Text abrev) {
+    public void setAbrev(String abrev) {
         this.abrev = abrev;
     }
+
 }

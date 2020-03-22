@@ -7,148 +7,140 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-import org.w3c.dom.Text;
 
 @Entity(tableName = "usuario",
         foreignKeys = @ForeignKey(entity = TipoDocumento.class, parentColumns = "id", childColumns = "id_tid"),
         indices = {@Index("id_tid")})
 public class Usuario {
 
-    @PrimaryKey(autoGenerate = true)
+   /* @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    private int id;
+    private int id;*/
+    @PrimaryKey
     @NonNull
     @ColumnInfo(name = "username")
-    private Text username;
+    private int username;
     @ColumnInfo(name = "nombres")
-    private Text nombres;
+    private String nombres;
     @ColumnInfo(name = "apellidos")
-    private Text apellidos;
+    private String apellidos;
     @ColumnInfo(name = "fnac")
-    private Text fnac;
+    private String fnac;
     @ColumnInfo(name = "fexp")
-    private Text fexp;
+    private String fexp;
     @ColumnInfo(name = "lexp")
-    private Text lexp;
+    private String lexp;
     @ColumnInfo(name = "numcelular")
-    private Text numcelular;
+    private String numcelular;
     @ColumnInfo(name = "email")
-    private Text email;
+    private String email;
     @ColumnInfo(name = "clave")
-    private Text clave;
+    private String clave;
     @ColumnInfo(name = "claveencriptada")
-    private Text claveencriptada;
+    private String claveencriptada;
     @ColumnInfo(name = "sesion")
-    private Text sesion;
+    private String sesion;
     @ColumnInfo(name = "estado")
-    private Text estado;
+    private String estado;
     @NonNull
     @ColumnInfo(name = "id_tid")
     private int id_tid;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @NonNull
-    public Text getUsername() {
+    public int getUsername() {
         return username;
     }
 
-    public void setUsername(@NonNull Text username) {
+    public void setUsername(int username) {
         this.username = username;
     }
 
-    public Text getNombres() {
+    public String getNombres() {
         return nombres;
     }
 
-    public void setNombres(Text nombres) {
+    public void setNombres(String nombres) {
         this.nombres = nombres;
     }
 
-    public Text getApellidos() {
+    public String getApellidos() {
         return apellidos;
     }
 
-    public void setApellidos(Text apellidos) {
+    public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
 
-    public Text getFnac() {
+    public String getFnac() {
         return fnac;
     }
 
-    public void setFnac(Text fnac) {
+    public void setFnac(String fnac) {
         this.fnac = fnac;
     }
 
-    public Text getFexp() {
+    public String getFexp() {
         return fexp;
     }
 
-    public void setFexp(Text fexp) {
+    public void setFexp(String fexp) {
         this.fexp = fexp;
     }
 
-    public Text getLexp() {
+    public String getLexp() {
         return lexp;
     }
 
-    public void setLexp(Text lexp) {
+    public void setLexp(String lexp) {
         this.lexp = lexp;
     }
 
-    public Text getNumcelular() {
+    public String getNumcelular() {
         return numcelular;
     }
 
-    public void setNumcelular(Text numcelular) {
+    public void setNumcelular(String numcelular) {
         this.numcelular = numcelular;
     }
 
-    public Text getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(Text email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public Text getClave() {
+    public String getClave() {
         return clave;
     }
 
-    public void setClave(Text clave) {
+    public void setClave(String clave) {
         this.clave = clave;
     }
 
-    public Text getClaveencriptada() {
+    public String getClaveencriptada() {
         return claveencriptada;
     }
 
-    public void setClaveencriptada(Text claveencriptada) {
+    public void setClaveencriptada(String claveencriptada) {
         this.claveencriptada = claveencriptada;
     }
 
-    public Text getSesion() {
+    public String getSesion() {
         return sesion;
     }
 
-    public void setSesion(Text sesion) {
+    public void setSesion(String sesion) {
         this.sesion = sesion;
     }
 
-    public Text getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(Text estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 

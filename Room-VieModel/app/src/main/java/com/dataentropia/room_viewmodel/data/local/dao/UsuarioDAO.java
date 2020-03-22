@@ -7,9 +7,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
-
 import com.dataentropia.room_viewmodel.data.local.entity.Usuario;
-
 import java.util.List;
 
 @Dao
@@ -25,11 +23,11 @@ public interface UsuarioDAO {
     public void deleteUsuario(Usuario usuario);
 
     @Query("SELECT * FROM usuario")
-    public LiveData<List<Usuario>> getAllTipoDocumentos();
+    public LiveData<List<Usuario>> getAllUsuarios();
 
     @Query("SELECT * FROM usuario where username = :username")
     public LiveData<Usuario> getUsuarioByUsername(String username);
 
-    @Query("SELECT * FROM usuario where id In (:username)")
+    @Query("SELECT * FROM usuario where username In (:username)")
     public List<Usuario> getUsuarioByUsernames(List<String> username);
 }

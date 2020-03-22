@@ -2,13 +2,10 @@ package com.dataentropia.room_viewmodel.data.remote.repository;
 
 import android.content.Context;
 import android.util.Log;
-
 import androidx.lifecycle.LiveData;
-
 import com.dataentropia.room_viewmodel.helpers.DatabaseCreator;
 import com.dataentropia.room_viewmodel.data.local.dao.AddressDAO;
 import com.dataentropia.room_viewmodel.data.local.entity.Address;
-
 import java.util.List;
 
 public class AddressRepository {
@@ -19,7 +16,6 @@ public class AddressRepository {
     public AddressRepository(Context context) {
         addressDAO = DatabaseCreator.getAppDatabase(context).AddressDatabase();
     }
-
 
     public void addAddress(Address a) {
            long rec =  addressDAO.insertAddress(a);
