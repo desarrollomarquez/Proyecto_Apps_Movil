@@ -3,9 +3,12 @@ package com.dataentropia.room_viewmodel.data.remote.repository;
 import android.content.Context;
 import android.util.Log;
 import androidx.lifecycle.LiveData;
+
+import com.dataentropia.room_viewmodel.data.local.AppDatabase;
 import com.dataentropia.room_viewmodel.data.local.dao.ParametroDAO;
 import com.dataentropia.room_viewmodel.data.local.entity.Parametro;
-import com.dataentropia.room_viewmodel.helpers.DatabaseCreator;
+
+
 import java.util.List;
 
 public class ParametroRepository {
@@ -13,7 +16,7 @@ public class ParametroRepository {
     private ParametroDAO parametroDAO;
 
     public ParametroRepository(Context context) {
-        parametroDAO = DatabaseCreator.getAppDatabase(context).ParametroDatabase();
+        parametroDAO = AppDatabase.getAppDatabase(context).ParametroDatabase();
     }
 
     public void addParametro(Parametro p) {

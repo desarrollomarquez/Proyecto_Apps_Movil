@@ -2,22 +2,19 @@ package com.dataentropia.room_viewmodel.view;
 
 
 import android.os.Bundle;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.dataentropia.room_viewmodel.data.local.entity.Address;
 import com.dataentropia.room_viewmodel.data.local.entity.Person;
 import com.dataentropia.room_viewmodel.R;
+import com.dataentropia.room_viewmodel.data.local.entity.TipoDocumento;
 import com.dataentropia.room_viewmodel.viewmodel.PersonViewModel;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +22,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private PersonViewModel personViewModel;
+    public List<String> lstTiposDocumento;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         observerAddressListResults(personViewModel.getAllAddress());
 
+        observerTipoDocumentoListResults(personViewModel.getAllTipoDocumentos());
+
+
         //corresponding DAO method call returns LiveData
         //Transformations makes it possible to add observer only once to LiveData returned by room DAO
         observePersonByMobile(personViewModel.getPersonsByMobile());
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 else{
-                    Toast.makeText(MainActivity.this, "Number of person objects in the response: "+person.get(0).getName()+"- "+person.get(1).getName(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Persona: "+person.get(0).getName()+" - "+person.get(0).getMobile(), Toast.LENGTH_LONG).show();
                 }
                 /*String cadena = " ";
                 Iterator iter = person.iterator();
@@ -76,7 +78,29 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
 
-                    Toast.makeText(MainActivity.this, "Number of address objects in the response: "+addresses.get(0).getAddressone()+" "+addresses.get(1).getAddressone(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Number of address objects in the response: "+addresses+" "+addresses, Toast.LENGTH_LONG).show();
+                }
+                /*String cadena = " ";
+                Iterator iter = person.iterator();
+                while (iter.hasNext())
+                    cadena = cadena + iter.next().toString();
+                System.out.print(person);*/
+
+            }
+        });
+    }
+
+    private void observerTipoDocumentoListResults(LiveData<List<TipoDocumento>> tipoDocumentoLive) {
+        //observer LiveData
+        tipoDocumentoLive.observe(this, new Observer<List<TipoDocumento>>() {
+            @Override
+            public void onChanged(@Nullable List<TipoDocumento> tipoDocumentos) {
+                if(tipoDocumentos == null){
+                    return;
+                }
+                else {
+
+                    Toast.makeText(MainActivity.this, "Tipos de Documentos: "+tipoDocumentos.get(0).getNombre()+" - "+tipoDocumentos.get(1).getNombre()+" - "+tipoDocumentos.get(2).getNombre(), Toast.LENGTH_LONG).show();
                 }
                 /*String cadena = " ";
                 Iterator iter = person.iterator();
@@ -116,6 +140,11 @@ public class MainActivity extends AppCompatActivity {
         observerAddressListResults(allAddress);
     }
 
+    public void getAllTipoDocumentos(View view){
+        LiveData<List<TipoDocumento>> allTipoDocumentos = personViewModel.getAllTipoDocumentos();
+        observerTipoDocumentoListResults(allTipoDocumentos);
+    }
+
     public void getPersonByMobile(View view){
         if((TextView)findViewById(R.id.mobile) == null){
             Toast.makeText(this, "Please enter mobile number", Toast.LENGTH_LONG);
@@ -142,7 +171,6 @@ public class MainActivity extends AppCompatActivity {
         personViewModel.addAddress(createAddress());
         personViewModel.addPerson(createPerson());
     }
-
 
     public void updatePerson(View view){
         if((TextView)findViewById(R.id.mobile) == null){
@@ -178,4 +206,6 @@ public class MainActivity extends AppCompatActivity {
         a.setZip(((TextView)findViewById(R.id.zip)).getText().toString());
         return a;
     }
+
+
 }

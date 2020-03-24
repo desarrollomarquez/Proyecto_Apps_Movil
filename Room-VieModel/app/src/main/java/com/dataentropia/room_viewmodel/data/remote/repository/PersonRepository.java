@@ -5,9 +5,10 @@ import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
-import com.dataentropia.room_viewmodel.helpers.DatabaseCreator;
+import com.dataentropia.room_viewmodel.data.local.AppDatabase;
 import com.dataentropia.room_viewmodel.data.local.dao.PersonDAO;
 import com.dataentropia.room_viewmodel.data.local.entity.Person;
+
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class PersonRepository {
 
 
     public PersonRepository(Context context) {
-        personDAO = DatabaseCreator.getAppDatabase(context).PersonDatabase();
+        personDAO = AppDatabase.getAppDatabase(context).PersonDatabase();
     }
 
 

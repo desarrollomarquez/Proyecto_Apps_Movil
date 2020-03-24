@@ -12,9 +12,11 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 
 import com.dataentropia.room_viewmodel.data.local.entity.Address;
+import com.dataentropia.room_viewmodel.data.local.entity.TipoDocumento;
 import com.dataentropia.room_viewmodel.data.remote.repository.AddressRepository;
 import com.dataentropia.room_viewmodel.data.local.entity.Person;
 import com.dataentropia.room_viewmodel.data.remote.repository.PersonRepository;
+import com.dataentropia.room_viewmodel.data.remote.repository.TipoDocumentoRepository;
 
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -25,6 +27,8 @@ public class PersonViewModel extends AndroidViewModel {
     private PersonRepository personRepository = new PersonRepository(this.getApplication());
 
     private AddressRepository addressRepository = new AddressRepository(this.getApplication());
+
+    private TipoDocumentoRepository tipoDocumentoRepository = new TipoDocumentoRepository(this.getApplication());
 
     private final Executor executor = Executors.newFixedThreadPool(2);
 
@@ -83,6 +87,10 @@ public class PersonViewModel extends AndroidViewModel {
 
     public LiveData<List<Address>> getAllAddress(){
         return addressRepository.getAllAddress();
+    }
+
+    public LiveData<List<TipoDocumento>> getAllTipoDocumentos(){
+        return tipoDocumentoRepository.getAllTipoDocumentos();
     }
     //Room DAO call needs to be run on background thread
     //This example uses AsyncTask

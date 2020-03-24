@@ -3,9 +3,12 @@ package com.dataentropia.room_viewmodel.data.remote.repository;
 import android.content.Context;
 import android.util.Log;
 import androidx.lifecycle.LiveData;
+
+import com.dataentropia.room_viewmodel.data.local.AppDatabase;
 import com.dataentropia.room_viewmodel.data.local.dao.UsuarioDAO;
 import com.dataentropia.room_viewmodel.data.local.entity.Usuario;
-import com.dataentropia.room_viewmodel.helpers.DatabaseCreator;
+
+
 import java.util.List;
 
 public class UsuarioRepository {
@@ -13,7 +16,7 @@ public class UsuarioRepository {
     private UsuarioDAO usuarioDAO;
 
     public UsuarioRepository(Context context) {
-        usuarioDAO = DatabaseCreator.getAppDatabase(context).UsuarioDatabase();
+        usuarioDAO = AppDatabase.getAppDatabase(context).UsuarioDatabase();
     }
 
     public void addUsuario(Usuario u) {
